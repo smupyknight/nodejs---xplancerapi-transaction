@@ -1,0 +1,22 @@
+ServiceInfo:
+    name: VividTransactionService
+    category: /vivid
+    masterslave: false
+    desc: '后台业务'
+
+Logger:
+    - name: winston.transports.File
+      options:
+          name: 'file'
+          level: "info"
+          json: false
+          filename: "/data/logs/vivid_transaction_service/vivid_transaction_service.log"
+    - name: winston.transports.File
+      options:
+          name: 'file-err'
+          level: "error"
+          json: false
+          filename: "/data/logs/vivid_transaction_service/vivid_transaction_service.err"
+
+MainDb:
+    url: 'mongodb://localhost:27017/vivid'
